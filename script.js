@@ -6,9 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         const spans = mobileToggle.querySelectorAll('span');
-        spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(8px, 5px)' : '';
-        spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
-        spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(7px, -5px)' : '';
+        if (navLinks.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(8px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -5px)';
+        } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+        }
     });
 
     // Close mobile menu on link click
