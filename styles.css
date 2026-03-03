@@ -149,7 +149,7 @@ h1, h2, h3 {
 
 #hero h1, #hero p, #cta-banner h2, #cta-banner p {
     color: #ffffff !important;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7) !important;
 }
 
 #hero h1 {
@@ -265,7 +265,7 @@ h1, h2, h3 {
     height: 240px;
     width: 100%;
     overflow: hidden;
-    background: #eee;
+    background: #f1f5f9;
 }
 
 .card-img-wrapper img {
