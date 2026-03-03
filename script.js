@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reveals.forEach(element => {
             const windowHeight = window.innerHeight;
             const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
+            const elementVisible = 100;
 
             if (elementTop < windowHeight - elementVisible) {
                 element.classList.add('active');
@@ -57,12 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar shrink on scroll
     const navbar = document.querySelector('.navbar');
+    const navContainer = document.querySelector('.nav-container');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.height = '70px';
+            navContainer.style.height = '70px';
             navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
         } else {
-            navbar.style.height = '80px';
+            navContainer.style.height = '80px';
             navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
         }
     });
