@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navContainer = document.querySelector('.nav-container');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navContainer.style.height = '70px';
-            navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            if (navContainer) navContainer.style.height = '70px';
+            if (navbar) navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
         } else {
-            navContainer.style.height = '80px';
-            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
+            if (navContainer) navContainer.style.height = '80px';
+            if (navbar) navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
         }
     });
 });
