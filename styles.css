@@ -342,6 +342,9 @@ h1, h2, h3 {
     padding: 40px;
     border-radius: var(--radius);
     border-left: 5px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .stars {
@@ -354,6 +357,27 @@ h1, h2, h3 {
     font-style: italic;
     margin-bottom: 20px;
     font-size: 1.1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.testimonial-author cite {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--accent);
 }
 
 /* CTA Banner */
