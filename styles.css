@@ -25,6 +25,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     background: var(--neutral);
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -66,6 +67,7 @@ h1, h2, h3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    transition: height 0.3s ease;
 }
 
 .logo {
@@ -263,6 +265,7 @@ h1, h2, h3 {
     height: 240px;
     width: 100%;
     overflow: hidden;
+    background: #eee;
 }
 
 .card-img-wrapper img {

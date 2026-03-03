@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
         });
     });
 
@@ -33,14 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', reveal);
-    reveal();
+    reveal(); // Initial check
 
     // Smooth Scroll for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            if (this.getAttribute('href') !== '#') {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     const headerOffset = 80;
                     const elementPosition = target.getBoundingClientRect().top;
@@ -55,16 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Navbar shrink on scroll
+    // Navbar style change on scroll
     const navbar = document.querySelector('.navbar');
     const navContainer = document.querySelector('.nav-container');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            if (navContainer) navContainer.style.height = '70px';
-            if (navbar) navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            navContainer.style.height = '70px';
+            navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
         } else {
-            if (navContainer) navContainer.style.height = '80px';
-            if (navbar) navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
+            navContainer.style.height = '80px';
+            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
         }
     });
 });
